@@ -4,7 +4,7 @@ import React from 'react'
   return (
     <tr>
         <td>{props.Contact.name}</td>
-        <td>{props.Contact.tel}</td>
+        <td>{props.Contact.phone}</td>
         <td>
             <span className='badge bg-danger'> 
               &times; 
