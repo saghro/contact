@@ -1,21 +1,58 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import React,{Component} from "react";
 
- function AddContact() {
+class  AddContact extends React.Component {
+    constructor(props){
+      super(props);
+      this.state={
+        name:"",
+        phone:"",
+      };
+    }
+     submitForm =(event)=>{
+      event.preventDefault();
+      const contact ={
+        name:this.state.name,
+        phone:this.state.phone
+      };
+      this.props.AddContact(contact)
+     };
+render(){
   return (
-    <Form className='container'>
-      <Form.Group className="mb-3" controlId="formBasicNom">
-        <Form.Label>Nom & pré</Form.Label>
-        <Form.Control type="text" placeholder="Enter nom et prenom " />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicNumber">
-        <Form.Label>tele</Form.Label>
-        <Form.Control type="text" placeholder="telephone" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Ajouter
-      </Button>
-    </Form>
-  )
+    <div className="row my-4">
+       <div className='col-md-6 mx-auto card bg-white'>
+         <form onSubmit={(event)=>this.submitForm(event)}  method="post" className='p-2'>
+            <div className='form-group'>
+               <input type="text" name='name'
+               className='form-control'
+               value={this.state.name}
+               onChange={(event)=>
+                this.setState({name:event.target.value}) 
+              }
+               autoComplete='off'
+          
+                placeholder='Nom & Prénom'/>
+            </div>
+            <div className='form-group'>
+               <input type="text" name='phone'
+                className='form-control'
+                autoComplete='off'
+                value={this.state.phone}
+                onChange={(event)=>
+                  this.setState({phone:event.target.value}) 
+                }
+                placeholder='Phone'/>
+            </div>
+            <div className='form-group'>
+               <input type="submit" className='btn btn-primary'
+                 value='Valider'              />
+            </div>
+
+         </form>
+
+       </div>
+
+    </div>
+)
+}
 }
 export default AddContact;

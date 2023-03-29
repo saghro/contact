@@ -1,12 +1,15 @@
 import React from 'react'
 
- function ContactItem(props) {
+ function ContactItem({ Contact :{name,phone},DeletContact}) {
   return (
     <tr>
-        <td>{props.Contact.name}</td>
-        <td>{props.Contact.tel}</td>
+        <td>{name}</td>
+        <td>{phone}</td>
         <td>
-            <span className='badge bg-danger'> 
+            <span onClick={()=>DeletContact(name)}
+               style={{cursor: 'pointer'}}
+              className='badge bg-danger'> 
+            
               &times; 
             </span>
         
