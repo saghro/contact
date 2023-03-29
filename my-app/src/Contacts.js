@@ -28,11 +28,14 @@ class  Contacts extends React.Component {
         updatContacts.push(contact);
         this.setState({Contacts:updatContacts})
        }
+<<<<<<< HEAD
        DeletContact = (name)=>{
         let oldContacts = this.state.Contacts;
          let updatContacts= oldContacts.filter((contact)=>contact.name !== name);
         this.setState({Contacts:updatContacts})
        }
+=======
+>>>>>>> 7954f040dc1ea994a192cea9f01bb51efd6a2563
     render() {
         return (
             <div className='container'>
@@ -50,9 +53,13 @@ class  Contacts extends React.Component {
                             </thead>
                             <tbody>
                                  {
+<<<<<<< HEAD
                                     this.state.Contacts.map((Contact,index)=>(<ContactItem 
                                       DeletContact={this.DeletContact}
                                       key={index} Contact={Contact}/>))
+=======
+                                    this.state.Contacts.map((Contact,index)=>(<ContactItem key={index} Contact={Contact}/>))
+>>>>>>> 7954f040dc1ea994a192cea9f01bb51efd6a2563
                                  } 
                             </tbody>
                         </table>

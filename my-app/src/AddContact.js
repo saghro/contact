@@ -53,6 +53,10 @@ render(){
 
     </div>
 )
+<<<<<<< HEAD
+}
+=======
+>>>>>>> 7954f040dc1ea994a192cea9f01bb51efd6a2563
 }
 }
 export default AddContact;
